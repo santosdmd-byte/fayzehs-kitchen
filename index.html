@@ -20,6 +20,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  background-image: radial-gradient(circle at 10% 20%, rgba(201,168,76,0.05) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(44,74,44,0.05) 0%, transparent 40%);
 }
 header {
   position: relative;
@@ -83,6 +84,15 @@ h2 {
   font-size: 2.5rem;
   color: var(--green);
   margin-bottom: 0.5rem;
+  position: relative;
+}
+h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0.8rem auto 0;
 }
 .subtitle {
   text-align: center;
@@ -102,6 +112,14 @@ h2 {
   box-shadow: 0 8px 25px rgba(0,0,0,0.08);
   border: 1px solid #e8dfd0;
   transition: transform 0.3s;
+  position: relative;
+}
+.menu-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--green));
 }
 .menu-item:hover { transform: translateY(-6px); }
 .item-content { padding: 1.5rem; }
