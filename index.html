@@ -137,6 +137,19 @@ footer { background: #111; color: #aaa; text-align: center; padding: 2rem; font-
 [data-lang="en"] .ar { display: none; }
 html[data-lang="ar"] body { direction: rtl; }
 html[data-lang="ar"] .menu-grid { direction: ltr; }
+.mute-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10000;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid var(--gold);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -145,10 +158,11 @@ html[data-lang="ar"] .menu-grid { direction: ltr; }
   <h1 style="font-size:4rem;color:white;text-shadow:0 4px 20px rgba(0,0,0,0.4);">Fayzeh's Kitchen</h1>
   <div style="font-size:2rem;color:#faf6f0;margin-top:0.5rem;font-family:Amiri,serif;">مطبخ فيزة</div>
   <div style="position:absolute;bottom:20px;right:20px;width:220px;height:124px;pointer-events:auto;">
-    <iframe width="220" height="124" src="https://www.youtube.com/embed/5iP8dQiye6w?autoplay=1&mute=0&loop=1&playlist=5iP8dQiye6w" title="Desert Whispers - Traditional Middle Eastern Oud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,0.4);"></iframe>
+    <iframe id="yt-player" width="220" height="124" src="https://www.youtube.com/embed/5iP8dQiye6w?autoplay=1&mute=1&loop=1&playlist=5iP8dQiye6w&enablejsapi=1" title="Desert Whispers - Traditional Middle Eastern Oud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,0.4);"></iframe>
   </div>
   <div style="position:absolute;bottom:40px;left:0;right:0;text-align:center;color:white;font-size:1.1rem;letter-spacing:2px;opacity:0.8;">Authentic Syrian Flavors</div>
 </div>
+<button class="mute-btn" id="muteBtn" onclick="toggleMute()">♪ Sound Off</button>
 <script>
 setTimeout(() => {
   document.getElementById('cinematic-intro').style.opacity = '0';
@@ -162,6 +176,20 @@ function toggleLang() {
   html.setAttribute('data-lang', next);
 }
 document.documentElement.setAttribute('data-lang', 'en');
+let isMuted = true;
+function toggleMute() {
+  const iframe = document.getElementById('yt-player');
+  const btn = document.getElementById('muteBtn');
+  if (isMuted) {
+    iframe.src = iframe.src.replace('mute=1', 'mute=0');
+    btn.textContent = '♪ Sound On';
+    isMuted = false;
+  } else {
+    iframe.src = iframe.src.replace('mute=0', 'mute=1');
+    btn.textContent = '♪ Sound Off';
+    isMuted = true;
+  }
+}
 </script>
 <header>
   <button class="lang-toggle" onclick="toggleLang()">العربية / English</button>
