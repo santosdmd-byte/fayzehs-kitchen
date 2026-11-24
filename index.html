@@ -190,54 +190,17 @@ html[data-lang="ar"] .menu-grid { direction: ltr; }
 <div id="cinematic-intro" style="position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#c9a84c,#2c4a2c);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;">
   <h1 style="font-size:4rem;color:white;text-shadow:0 4px 20px rgba(0,0,0,0.4);">Fayzeh's Kitchen</h1>
   <div style="font-size:2rem;color:#faf6f0;margin-top:0.5rem;font-family:Amiri,serif;">مطبخ فيزة</div>
-  <audio id="intro-music" loop>
-    <source id="music-source" src="https://cdn.pixabay.com/download/audio/2025/03/12/audio_312186.mp3?filename=oud-essence-312186.mp3" type="audio/mpeg">
-  </audio>
-  <div style="position:absolute;bottom:40px;left:0;right:0;text-align:center;color:white;font-size:1.1rem;letter-spacing:2px;opacity:0.8;">Authentic Syrian Flavors</div>
-  <div style="position:absolute;bottom:30px;right:20px;display:flex;gap:8px;align-items:center;">
-    <select id="music-select" onchange="changeTrack()" style="background:rgba(0,0,0,0.6);border:1px solid #c9a84c;color:white;padding:6px 10px;border-radius:16px;font-size:0.85rem;">
-      <option value="https://cdn.pixabay.com/download/audio/2025/03/12/audio_312186.mp3?filename=oud-essence-312186.mp3">Oud Essence</option>
-      <option value="https://cdn.pixabay.com/download/audio/2026/02/09/audio_480640.mp3?filename=spiritual-arabian-480640.mp3">Spiritual Arabian</option>
-      <option value="https://cdn.pixabay.com/download/audio/2024/11/01/audio_258607.mp3?filename=dunes-and-odyssey-258607.mp3">Dunes & Odyssey</option>
-      <option value="https://cdn.pixabay.com/download/audio/2025/03/06/audio_310094.mp3?filename=oud-310094.mp3">Oud</option>
-      <option value="">Silence</option>
-    </select>
-    <button id="music-toggle" onclick="toggleMusic()" style="background:rgba(0,0,0,0.5);border:1px solid #c9a84c;color:white;padding:8px 14px;border-radius:20px;cursor:pointer;">♪ Music</button>
+  <div style="position:absolute;bottom:80px;left:50%;transform:translateX(-50%);width:320px;height:180px;">
+    <iframe width="320" height="180" src="https://www.youtube.com/embed/5iP8dQiye6w?autoplay=1&mute=0&loop=1&playlist=5iP8dQiye6w" title="Desert Whispers - Traditional Middle Eastern Oud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.4);"></iframe>
   </div>
+  <div style="position:absolute;bottom:40px;left:0;right:0;text-align:center;color:white;font-size:1.1rem;letter-spacing:2px;opacity:0.8;">Authentic Syrian Flavors</div>
 </div>
 <script>
-function changeTrack() {
-  const select = document.getElementById('music-select');
-  const audio = document.getElementById('intro-music');
-  const source = document.getElementById('music-source');
-  if (select.value === '') {
-    audio.pause();
-    document.getElementById('music-toggle').textContent = '♪ Music';
-    return;
-  }
-  source.src = select.value;
-  audio.load();
-  audio.play().catch(() => {});
-  document.getElementById('music-toggle').textContent = '♪ Music On';
-}
-function toggleMusic() {
-  const audio = document.getElementById('intro-music');
-  if (audio.paused) {
-    audio.play().catch(() => {});
-    document.getElementById('music-toggle').textContent = '♪ Music On';
-  } else {
-    audio.pause();
-    document.getElementById('music-toggle').textContent = '♪ Music';
-  }
-}
 setTimeout(() => {
   document.getElementById('cinematic-intro').style.opacity = '0';
   document.getElementById('cinematic-intro').style.transition = 'opacity 1.5s';
   setTimeout(() => document.getElementById('cinematic-intro').style.display = 'none', 1500);
-}, 8000);
-setTimeout(() => {
-  document.getElementById('intro-music').play().catch(() => {});
-}, 800);
+}, 12000);
 function toggleLang() {
   const html = document.documentElement;
   const current = html.getAttribute('data-lang') || 'en';
