@@ -1,1 +1,320 @@
-FULL_CONTENT_WILL_BE_REPLACED
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fayzeh's Kitchen | مطبخ فيزة</title>
+<style>
+:root {
+  --bg: #f6efe4;
+  --dark: #1a2f1a;
+  --green: #2c4a2c;
+  --gold: #c9a84c;
+  --cream: #faf6f0;
+  --text: #2a2418;
+  --accent: #8b5a2b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Georgia', serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+header {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  background: linear-gradient(135deg, #c9a84c 0%, #2c4a2c 50%, #8b5a2b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+.hero-content h1 {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+.hero-content .ar {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  margin-top: 0.5rem;
+  font-family: 'Amiri', 'Traditional Arabic', serif;
+}
+.tagline {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  font-style: italic;
+  opacity: 0.95;
+}
+.lang-toggle {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid var(--gold);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+nav {
+  background: var(--dark);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+nav a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+}
+section { padding: 5rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+}
+.subtitle {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 3rem;
+  color: var(--accent);
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.menu-item {
+  background: var(--cream);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  border: 1px solid #e8dfd0;
+}
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.item-content { padding: 1.5rem; }
+.item-content h3 {
+  color: var(--green);
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+.item-content .ar-name {
+  font-family: 'Amiri', serif;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+.price {
+  color: var(--gold);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+.about { background: var(--cream); text-align: center; }
+.about p { max-width: 700px; margin: 1rem auto; font-size: 1.1rem; }
+.order { background: var(--dark); color: white; text-align: center; }
+.order h2 { color: var(--gold); }
+.order-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+.btn { background: var(--gold); color: var(--dark); padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; letter-spacing: 1px; }
+.btn.secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+footer { background: #111; color: #aaa; text-align: center; padding: 2rem; font-size: 0.9rem; }
+[data-lang="ar"] .en { display: none; }
+[data-lang="en"] .ar { display: none; }
+html[data-lang="ar"] body { direction: rtl; }
+html[data-lang="ar"] .menu-grid { direction: ltr; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="cinematic-intro" style="position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#c9a84c,#2c4a2c);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;pointer-events:none;">
+  <h1 style="font-size:4rem;color:white;text-shadow:0 4px 20px rgba(0,0,0,0.4);">Fayzeh's Kitchen</h1>
+  <div style="font-size:2rem;color:#faf6f0;margin-top:0.5rem;font-family:Amiri,serif;">مطبخ فيزة</div>
+  <div style="position:absolute;bottom:20px;right:20px;width:220px;height:124px;pointer-events:auto;">
+    <iframe width="220" height="124" src="https://www.youtube.com/embed/5iP8dQiye6w?autoplay=1&mute=0&loop=1&playlist=5iP8dQiye6w" title="Desert Whispers - Traditional Middle Eastern Oud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,0.4);"></iframe>
+  </div>
+  <div style="position:absolute;bottom:40px;left:0;right:0;text-align:center;color:white;font-size:1.1rem;letter-spacing:2px;opacity:0.8;">Authentic Syrian Flavors</div>
+</div>
+<script>
+setTimeout(() => {
+  document.getElementById('cinematic-intro').style.opacity = '0';
+  document.getElementById('cinematic-intro').style.transition = 'opacity 1.5s';
+  setTimeout(() => document.getElementById('cinematic-intro').style.display = 'none', 1500);
+}, 5000);
+function toggleLang() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-lang') || 'en';
+  const next = current === 'en' ? 'ar' : 'en';
+  html.setAttribute('data-lang', next);
+}
+document.documentElement.setAttribute('data-lang', 'en');
+</script>
+<header>
+  <button class="lang-toggle" onclick="toggleLang()">العربية / English</button>
+  <div class="hero-content">
+    <h1 class="en">Fayzeh's Kitchen</h1>
+    <div class="ar">مطبخ فيزة</div>
+    <p class="tagline en">Authentic Syrian Flavors. Timeless Recipes.</p>
+    <p class="tagline ar">نكهات سورية أصيلة. وصفات خالدة.</p>
+  </div>
+</header>
+<nav>
+  <a href="#menu" class="en">Menu</a>
+  <a href="#menu" class="ar">القائمة</a>
+  <a href="#about" class="en">About</a>
+  <a href="#about" class="ar">من نحن</a>
+  <a href="#order" class="en">Order</a>
+  <a href="#order" class="ar">اطلب</a>
+</nav>
+<section id="menu">
+  <h2 class="en">Our Menu</h2>
+  <h2 class="ar">قائمتنا</h2>
+  <p class="subtitle en">Traditional Middle Eastern Dishes</p>
+  <p class="subtitle ar">أطباق شرق أوسطية تقليدية</p>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="grape.jpg" alt="Grape Leaves">
+      <div class="item-content">
+        <h3 class="en">Grape Leaves (Yalanji / Warak Enab)</h3>
+        <div class="ar-name">ورق عنب / يالانجي</div>
+        <p class="en">Tender grape leaves stuffed with rice, parsley, tomatoes, onions, mint, and lemon. Usually served cold or at room temperature.</p>
+        <p class="ar">أوراق عنب طرية محشوة بالأرز والبقدونس والطماطم والبصل والنعناع والليمون. تقدم عادة باردة أو بدرجة حرارة الغرفة.</p>
+        <div class="price en">Price coming soon</div>
+        <div class="price ar">السعر قريباً</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="falafel.jpg" alt="Falafel">
+      <div class="item-content">
+        <h3 class="en">Falafel</h3>
+        <div class="ar-name">فلافل</div>
+        <p class="en">Deep-fried crispy balls made from ground chickpeas, herbs, garlic, and spices. Served with tahini sauce, vegetables, and pita bread.</p>
+        <p class="ar">كرات مقرمشة مقلية من الحمص المطحون والأعشاب والثوم والتوابل. تقدم مع صلصة الطحينة والخضار وخبز البيتا.</p>
+        <div class="price en">Price coming soon</div>
+        <div class="price ar">السعر قريباً</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="shawarma.jpg" alt="Shawarma">
+      <div class="item-content">
+        <h3 class="en">Shawarma</h3>
+        <div class="ar-name">شاورما</div>
+        <p class="en">Thinly sliced marinated chicken or beef cooked on a rotating spit. Served in pita bread or on a plate with garlic sauce, pickles, and vegetables.</p>
+        <p class="ar">شرائح رقيقة من الدجاج أو اللحم المتبل المطبوخ على السيخ الدوار. تقدم في خبز البيتا أو على طبق مع صلصة الثوم والمخللات والخضار.</p>
+        <div class="price en">Price coming soon</div>
+        <div class="price ar">السعر قريباً</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="ouzi.jpg" alt="Ouzi">
+      <div class="item-content">
+        <h3 class="en">Ouzi</h3>
+        <div class="ar-name">أوزي</div>
+        <p class="en">A traditional dish of seasoned rice with tender meat, peas, carrots, and toasted nuts. (Without pastry wrap)</p>
+        <p class="ar">طبق تقليدي من الأرز المتبل مع لحم طري وبازلاء وجزر ومكسرات محمصة. (بدون عجينة)</p>
+        <div class="price en">Price coming soon</div>
+        <div class="price ar">السعر قريباً</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="tabbouleh.jpg" alt="Tabbouleh">
+      <div class="item-content">
+        <h3 class="en">Tabbouleh</h3>
+        <div class="ar-name">تبولة</div>
+        <p class="en">A refreshing salad made with finely chopped parsley, tomatoes, mint, bulgur wheat, lemon juice, and olive oil.</p>
+        <p class="ar">سلطة منعشة مصنوعة من البقدونس المفروم ناعماً والطماطم والنعناع والبرغل وعصير الليمون وزيت الزيتون.</p>
+        <div class="price en">Price coming soon</div>
+        <div class="price ar">السعر قريباً</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="kibbeh.jpg" alt="Kibbeh">
+      <div class="item-content">
+        <h3 class="en">Kibbeh (Kebbeh)</h3>
+        <div class="ar-name">كبة</div>
+        <p class="en">A traditional dish made with bulgur wheat and ground meat, usually stuffed with seasoned meat, onions, and pine nuts. Often shaped into football-like pieces and fried or baked.</p>
+        <p class="ar">طبق تقليدي من البرغل واللحم المفروم، محشو عادة باللحم المتبل والبصل والصنوبر. غالباً ما يشكل على شكل كرة قدم ويقلى أو يخبز.</p>
+        <div class="price en">Price coming soon</div>
+        <div class="price ar">السعر قريباً</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="baklava.jpg" alt="Baklava">
+      <div class="item-content">
+        <h3 class="en">Baklava</h3>
+        <div class="ar-name">بقلاوة</div>
+        <p class="en">Layers of thin phyllo pastry filled with chopped nuts, sweetened with honey syrup, and a hint of rose water.</p>
+        <p class="ar">طبقات من العجين الرقيق محشوة بالمكسرات المفرومة، محلاة بشراب العسل ولمسة من ماء الورد.</p>
+        <div class="price en">Price coming soon</div>
+        <div class="price ar">السعر قريباً</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="maamoul.jpg" alt="Maamoul">
+      <div class="item-content">
+        <h3 class="en">Maamoul</h3>
+        <div class="ar-name">معمول</div>
+        <p class="en">Traditional filled cookies with a buttery, crumbly dough, filled with dates, pistachios, or walnuts, often dusted with powdered sugar.</p>
+        <p class="ar">كوكيز محشو تقليدي بعجين زبدي متفتت، محشو بالتمر أو الفستق أو الجوز، غالباً ما يرش بسكر البودرة.</p>
+        <div class="price en">Price coming soon</div>
+        <div class="price ar">السعر قريباً</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="ghriba.jpg" alt="Ghriba">
+      <div class="item-content">
+        <h3 class="en">Ghriba</h3>
+        <div class="ar-name">غريبة</div>
+        <p class="en">Soft, crumbly cookies made with semolina or flour, flavored with butter and powdered sugar.</p>
+        <p class="ar">كوكيز ناعمة متفتتة مصنوعة من السميد أو الدقيق، بنكهة الزبدة وسكر البودرة.</p>
+        <div class="price en">Price coming soon</div>
+        <div class="price ar">السعر قريباً</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="about" class="about">
+  <h2 class="en">About Fayzeh's Kitchen</h2>
+  <h2 class="ar">عن مطبخ فيزة</h2>
+  <p class="en">Home-cooked Syrian recipes prepared with love by Fayzeh and her daughter Karolen. Authentic flavors from the heart of the Levant, now available for pickup and delivery across Jacksonville.</p>
+  <p class="ar">وصفات سورية منزلية محضرة بحب من فيزة وابنتها كارولين. نكهات أصيلة من قلب بلاد الشام، متاحة الآن للاستلام والتوصيل في جميع أنحاء جاكسونفيل.</p>
+</section>
+<section id="order" class="order">
+  <h2 class="en">Order Pickup or Delivery</h2>
+  <h2 class="ar">اطلب للاستلام أو التوصيل</h2>
+  <p class="en">Available across Jacksonville. Texting is the best way to order.</p>
+  <p class="ar">متاح في جميع أنحاء جاكسونفيل. الرسائل النصية هي أفضل طريقة للطلب.</p>
+  <div class="order-buttons">
+    <a href="sms:9044284966" class="btn en">Text 904-428-4966</a>
+    <a href="sms:9044284966" class="btn ar">أرسل رسالة 904-428-4966</a>
+    <a href="tel:9044284966" class="btn secondary en">Or Call</a>
+    <a href="tel:9044284966" class="btn secondary ar">أو اتصل</a>
+    <a href="#" class="btn secondary en">DoorDash (coming later)</a>
+    <a href="#" class="btn secondary ar">DoorDash (قريباً)</a>
+    <a href="#" class="btn secondary en">Uber Eats (coming later)</a>
+    <a href="#" class="btn secondary ar">Uber Eats (قريباً)</a>
+  </div>
+  <p style="margin-top:2rem; font-size:0.95rem; opacity:0.8;" class="en">Texting is best. Email to be added later. Prices to be added later. DoorDash and Uber Eats links to be added later.</p>
+  <p style="margin-top:2rem; font-size:0.95rem; opacity:0.8;" class="ar">الرسائل النصية هي الأفضل. البريد الإلكتروني سيُضاف لاحقاً. الأسعار ستُضاف لاحقاً. روابط DoorDash و Uber Eats ستُضاف لاحقاً.</p>
+</section>
+<footer>
+  <p>Fayzeh's Kitchen · مطبخ فيزة · Jacksonville, Florida</p>
+  <p class="en">Authentic Syrian home cooking · Text or call 904-428-4966</p>
+  <p class="ar">طبخ سوري منزلي أصيل · أرسل رسالة أو اتصل 904-428-4966</p>
+</footer>
+</body>
+</html>
